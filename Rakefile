@@ -11,8 +11,9 @@ namespace :greeting do
 end
 
 namespace :db do
-  task :migrate do
-
+  desc 'adds enivornment as a depdency, creates the student table in the database'
+  task :migrate => :environment do
+    Student.create_table
   end
   task :seed do
 
